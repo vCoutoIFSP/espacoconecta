@@ -1,0 +1,25 @@
+INSTRUÇÕES PARA INSTALAÇÃO DO PORTAL ESPAÇO CONECTA
+=====================================================
+
+Estrutura de arquivos no pacote:
+1. index.html       -> Página principal com as 5 dobras solicitadas
+2. quem-somos.html  -> História da startup no IFSP Guarulhos + 4 ações de extensão
+3. personas.html    -> Perfil detalhado de cada integrante da equipe
+4. contato.php      -> Formulário integrado com MySQL e envio de e-mail ao Scrum Master
+5. style.css        -> Folha de estilo responsiva com a paleta oficial do Espaço Conecta
+6. banco.sql        -> Script para criação do banco de dados e tabela no phpMyAdmin
+7. img/             -> Pasta para adicionar as fotos reais da equipe
+
+Como configurar as fotos na pasta img/:
+- Salve a foto da equipe no campus como: img/equipe-ifsp-guarulhos.jpg
+- Salve as fotos individuais como:
+  - img/victor.jpg
+  - img/arthur.jpg
+  - img/mick.jpg
+  - img/cayo.jpg
+  - img/vmartins.jpg
+(Caso alguma foto ainda não esteja na pasta, o sistema carrega automaticamente avatares personalizados com as iniciais).
+
+Como configurar o Banco de Dados e E-mail:
+1. Acesse o phpMyAdmin da hospedagem e importe o arquivo 'banco.sql'.
+2. Abra o arquivo 'contato.php' e atualize as variáveis $host, $usuario, $senha, $banco e $email_scrum_master nas primeiras linhas.

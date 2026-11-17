@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS espaco_conecta DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE espaco_conecta;
+
+CREATE TABLE IF NOT EXISTS mensagens_contato (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    email VARCHAR(120) NOT NULL,
+    assunto VARCHAR(180) NOT NULL,
+    conteudo TEXT NOT NULL,
+    data_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
