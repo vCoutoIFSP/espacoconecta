@@ -1,10 +1,13 @@
 :root {
-  --verde-escuro: #2f5d34;
-  --verde: #4f8a3c;
-  --marrom: #6b4226;
-  --creme: #f6f1e7;
+  --verde-escuro: #173f35;
+  --verde: #2f8067;
+  --verde-claro: #dcefe8;
+  --marrom: #a45b3f;
+  --creme: #f5f7f4;
   --branco: #ffffff;
-  --texto: #333333;
+  --texto: #24332f;
+  --texto-suave: #61716c;
+  --sombra: 0 18px 45px rgba(23, 63, 53, 0.1);
 }
 
 * {
@@ -18,31 +21,32 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", sans-serif;
   background-color: var(--creme);
   color: var(--texto);
-  line-height: 1.6;
-  border-top: 6px solid var(--verde);
+  line-height: 1.7;
+  border-top: 4px solid var(--verde);
 }
 
 h1, h2, h3, h4 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Space Grotesk", sans-serif;
   color: var(--verde-escuro);
+  line-height: 1.2;
 }
 
 /* Cabeçalho e Navegação */
 header {
   background-color: var(--branco);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 24px rgba(23, 63, 53, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .navbar {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 12px 20px;
+  padding: 16px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,41 +61,44 @@ header {
 }
 
 .brand img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 2px solid var(--verde);
+  width: 58px;
+  height: 42px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .brand span {
-  font-family: Georgia, serif;
-  font-size: 1.3rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
   font-weight: bold;
   color: var(--verde-escuro);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 24px;
+  gap: 8px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--marrom);
-  font-weight: bold;
-  transition: color 0.3s;
+  color: var(--texto-suave);
+  font-weight: 600;
+  padding: 9px 13px;
+  border-radius: 999px;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.ativo {
   color: var(--verde);
+  background-color: var(--verde-claro);
 }
 
 /* Utilitários de Seção */
 section {
-  padding: 60px 20px;
+  padding: 88px 24px;
 }
 
 .container {
@@ -101,25 +108,24 @@ section {
 
 .section-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 16px;
+  letter-spacing: -0.04em;
 }
 
 .divisor {
-  width: 80px;
-  height: 4px;
-  margin: 0 auto 40px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--verde), var(--marrom));
+  width: 56px;
+  height: 5px;
+  margin: 0 auto 48px;
+  border-radius: 999px;
+  background: var(--marrom);
 }
 
 /* 1ª Dobra - Hero com Foto da Equipe no IFSP */
 .dobra-1-hero {
-  background: linear-gradient(rgba(47, 93, 52, 0.78), rgba(107, 66, 38, 0.78)),
+  background: linear-gradient(120deg, rgba(23, 63, 53, 0.92), rgba(47, 128, 103, 0.72)),
               url('img/equipe-ifsp-guarulhos.jpg') center/cover no-repeat;
-  min-height: 75vh;
+  min-height: 78vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,42 +134,47 @@ section {
 }
 
 .hero-content {
-  max-width: 780px;
+  max-width: 760px;
+  padding: 32px 24px;
 }
 
 .hero-logo {
-  width: 140px;
-  height: 140px;
+  width: min(230px, 70vw);
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  aspect-ratio: auto;
   background: var(--branco);
-  border-radius: 50%;
-  padding: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  border-radius: 18px;
+  padding: 18px 24px;
+  margin-bottom: 28px;
+  box-shadow: var(--sombra);
 }
 
 .hero-content h1 {
   color: var(--branco);
-  font-size: 2.6rem;
-  letter-spacing: 0.15em;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  letter-spacing: -0.06em;
   margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 28px;
+  font-size: 1.15rem;
+  margin: 0 auto 32px;
   color: var(--creme);
+  max-width: 640px;
 }
 
 .btn {
   display: inline-block;
   background-color: var(--verde);
   color: var(--branco);
-  padding: 12px 28px;
-  border-radius: 6px;
+  padding: 14px 28px;
+  border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
   border: none;
   cursor: pointer;
 }
@@ -171,13 +182,14 @@ section {
 .btn:hover {
   background-color: var(--verde-escuro);
   transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(23, 63, 53, 0.25);
 }
 
 /* Grids e Cards (Dobras 2, 3 e 4) */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+  gap: 24px;
 }
 
 .grid-4 {
@@ -194,10 +206,11 @@ section {
 
 .card {
   background: var(--branco);
-  border-radius: 12px;
-  padding: 28px 22px;
-  box-shadow: 0 6px 20px rgba(47, 93, 52, 0.08);
-  border-bottom: 4px solid var(--verde);
+  border-radius: 18px;
+  padding: 32px 26px;
+  box-shadow: var(--sombra);
+  border: 1px solid rgba(47, 128, 103, 0.08);
+  border-top: 4px solid var(--verde);
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
   text-decoration: none;
@@ -209,7 +222,7 @@ section {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(47, 93, 52, 0.16);
+  box-shadow: 0 22px 50px rgba(23, 63, 53, 0.16);
 }
 
 .card-icon {
@@ -255,9 +268,9 @@ section {
 /* 5ª Dobra - Mapa e Endereço */
 .mapa-box {
   background: var(--branco);
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: var(--sombra);
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 24px;
@@ -275,11 +288,11 @@ section {
 /* Página Quem Somos e Personas Detalhadas */
 .bloco-conteudo {
   background: var(--branco);
-  padding: 36px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-  border-left: 6px solid var(--verde);
+  padding: 40px;
+  border-radius: 18px;
+  margin-bottom: 32px;
+  box-shadow: var(--sombra);
+  border-left: 5px solid var(--verde);
 }
 
 .persona-detalhe {
@@ -295,6 +308,7 @@ section {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--verde);
+  object-fit: cover;
 }
 
 /* Formulário de Contato */
@@ -352,9 +366,9 @@ footer {
   background-color: var(--verde-escuro);
   color: var(--creme);
   text-align: center;
-  padding: 28px 20px;
-  border-top: 6px solid var(--marrom);
-  margin-top: 40px;
+  padding: 36px 20px;
+  border-top: 4px solid var(--marrom);
+  margin-top: 56px;
 }
 
 /* Responsividade */
@@ -368,6 +382,16 @@ footer {
     justify-content: center;
     gap: 14px;
   }
+  .navbar {
+    padding: 14px 18px 18px;
+  }
+  .brand img {
+    width: 52px;
+    height: 38px;
+  }
+  section {
+    padding: 64px 18px;
+  }
   .hero-content h1 {
     font-size: 1.9rem;
   }
@@ -377,5 +401,9 @@ footer {
   }
   .persona-detalhe img {
     margin: 0 auto;
+  }
+  .bloco-conteudo,
+  .mapa-box {
+    padding: 26px;
   }
 }
