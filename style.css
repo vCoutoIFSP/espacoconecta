@@ -61,11 +61,12 @@ header {
 }
 
 .brand img {
-  width: 58px;
-  height: 42px;
+  width: 55px;
+  height: 55px;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
+  border-radius: 50%;
 }
 
 .brand span {
